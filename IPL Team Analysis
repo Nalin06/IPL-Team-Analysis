@@ -1,0 +1,111 @@
+IPL = {
+    "CSK": {
+        "Wins": "57.74%",
+        "Finals": "10 times",
+        "Champions": "5 times",
+        "Followers": "16 Million",
+        "Market Value":"$231.0 Million",
+    },
+    "MI": {
+        "Wins": "56.80%",
+        "Finals": "6 times",
+        "Champions": "5 times",
+        "Followers": "14.1 Million",
+        "Market Value":"$204.0 Million",
+    },
+    "RCB": {
+        "Wins": "47.50%",
+        "Finals": "3 times",
+        "Champions": "0 times",
+        "Followers": "14.9 Million",
+        "Market Value":"$227.0 Million",
+    },
+    "GT": {
+        "Wins": "62.22%",
+        "Finals": "2 times",
+        "Champions": "1 times",
+        "Followers": "4 Million",
+        "Market Value":"$124.0 Million",
+    },
+    "KKR": {
+        "Wins": "51.80%",
+        "Finals": "4 times",
+        "Champions": "3 times",
+        "Followers": "6.5 Million",
+        "Market Value":"$216.0 Million",
+    },
+    "RR": {
+        "Wins": "48.35%",
+        "Finals": "1 times",
+        "Champions": "2 times",
+        "Followers": "4.4 Million",
+        "Market Value":"$133.0 Million",
+    },
+    "SRH": {
+        "Wins": "47.80%",
+        "Finals": "3 times",
+        "Champions": "1 times",
+        "Followers": "4.4 Million",
+        "Market Value":"$132.0 Million",
+    },
+    "LSG": {
+        "Wins": "54.55%",
+        "Finals": "0 times",
+        "Champions": "0 times",
+        "Followers": "3.2 Million",
+        "Market Value":"$47.0 Million",
+    },
+    "PK": {
+        "Wins": "45.23%",
+        "Finals": "1 times",
+        "Champions": "0 times",
+        "Followers": "3.3 Million",
+        "Market Value":"$101.0 Million",
+    },
+    "DC": {
+        "Wins": "45.71%",
+        "Finals": "1 times",
+        "Champions": "0 times",
+        "Followers": "3.9 Million",
+        "Market Value":"$131.0 Million",
+    }
+}
+
+
+# Error handling and user input
+try:
+    # Ask user for input
+    user_input = input("Enter the team name : ")
+    
+    # Check if the user input exists in the dictionary and display its details
+    if user_input in IPL:
+        TEAM_INFO = IPL[user_input]
+        print(f"\nDetails for {user_input}:")
+        for key, value in TEAM_INFO.items():
+            print(f"{key}: {value}")
+    else:
+        print(f"Error: The team '{user_input}' is not in the IPL.")
+   
+except KeyError as e:
+    print(f"KeyError: The key {e} is missing from the dictionary.")
+except ValueError as e:
+    print(f"ValueError: There is an issue with the value {e}.")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
+finally:
+    print("This will always run, whether an exception occurs or not.")
+
+try:
+    print("\nInformation for teams:")
+    print(IPL["CSK"])
+    print(IPL["MI"])
+    print(IPL["RCB"])
+    print(IPL["RR"])
+    print(IPL["KKR"])
+    print(IPL["GT"])
+    print(IPL["LSG"])
+    print(IPL["SRH"])
+    print(IPL["DC"])
+    print(IPL["PK"])
+except KeyError:
+    print("KeyError: 'teams' is not a valid key.")
